@@ -1,0 +1,175 @@
+DROP DATABASE
+CREATE DATABASE
+You are now connected to database "bda_proj_2" as user "gk".
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+ actor_id |     first_name     |     city     | date_of_birth | age 
+----------+--------------------+--------------+---------------+-----
+        1 | Millie Bobby Brown | Los Angeles  | 2004-02-19    |  20
+        2 | Bryan Cranston     | Hollywood    | 1956-03-07    |  68
+        3 | Winona Ryder       | New York     | 1971-10-29    |  52
+        4 | Aaron Paul         | Boise        | 1979-08-27    |  44
+        5 | David Harbour      | White Plains | 1975-04-10    |  49
+(5 rows)
+
+INSERT 0 5
+ show_id |        title         | genre  | medium | release_date 
+---------+----------------------+--------+--------+--------------
+       1 | Stranger Things      | Sci-Fi | tv     | 2016-07-15
+       2 | Breaking Bad         | Drama  | tv     | 2008-01-20
+       3 | The Office           | Comedy | tv     | 2005-03-24
+       4 | Parks and Recreation | Comedy | tv     | 2009-04-09
+       5 | The Godfather        | Crime  | movie  | 1972-03-24
+(5 rows)
+
+INSERT 0 5
+ actor_id | show_id |  acting_role  
+----------+---------+---------------
+        1 |       1 | Eleven
+        2 |       2 | Walter White
+        3 |       1 | Joyce Byers
+        4 |       2 | Jesse Pinkman
+        5 |       1 | Jim Hopper
+(5 rows)
+
+INSERT 0 5
+ subscription_plan_id | plan_name | price | duration_in_months 
+----------------------+-----------+-------+--------------------
+                    1 | HD        |    10 |                  1
+                    2 | UHD       |    15 |                  1
+(2 rows)
+
+INSERT 0 2
+   username   |     city      | country | age |       email       | pass_word | subscription_plan_id 
+--------------+---------------+---------+-----+-------------------+-----------+----------------------
+ john_doe     | New York      | USA     |  28 | john@example.com  | password1 |                    1
+ alice_smith  | Los Angeles   | USA     |  34 | alice@example.com | password2 |                    1
+ jane_doe     | Chicago       | USA     |  21 | jane@example.com  | password3 |                    2
+ bob_jones    | Boston        | USA     |  30 | bob@example.com   | password4 |                    2
+ emma_johnson | San Francisco | USA     |  25 | emma@example.com  | password5 |                    1
+(5 rows)
+
+INSERT 0 5
+  username   | show_id | score 
+-------------+---------+-------
+ john_doe    |       3 |     5
+ john_doe    |       4 |     4
+ alice_smith |       5 |     3
+ jane_doe    |       1 |     5
+ bob_jones   |       2 |     4
+(5 rows)
+
+INSERT 0 5
+   username   | show_id | score |     comment     
+--------------+---------+-------+-----------------
+ john_doe     |       1 |     5 | Amazing show!
+ alice_smith  |       2 |     3 | Good show
+ jane_doe     |       3 |     4 | Funny and smart
+ bob_jones    |       4 |     2 | Not my taste
+ emma_johnson |       5 |     5 | A classic!
+(5 rows)
+
+INSERT 0 5
+ show_id |   username   
+---------+--------------
+       1 | john_doe
+       2 | alice_smith
+       3 | jane_doe
+       4 | bob_jones
+       5 | emma_johnson
+(5 rows)
+
+INSERT 0 5
+
+ 4.1 Export all data about users in the HD subscriptions.
+   username   |     city      | country | age |       email       | pass_word | subscription_plan_id | plan_name 
+--------------+---------------+---------+-----+-------------------+-----------+----------------------+-----------
+ john_doe     | New York      | USA     |  28 | john@example.com  | password1 |                    1 | HD
+ alice_smith  | Los Angeles   | USA     |  34 | alice@example.com | password2 |                    1 | HD
+ emma_johnson | San Francisco | USA     |  25 | emma@example.com  | password5 |                    1 | HD
+(3 rows)
+
+
+ 4.2 Export all data about actors and their associated movies.
+ show_id | actor_id |     first_name     |     city     | date_of_birth | age |  acting_role  |      title      | genre  | medium | release_date 
+---------+----------+--------------------+--------------+---------------+-----+---------------+-----------------+--------+--------+--------------
+       1 |        1 | Millie Bobby Brown | Los Angeles  | 2004-02-19    |  20 | Eleven        | Stranger Things | Sci-Fi | tv     | 2016-07-15
+       2 |        2 | Bryan Cranston     | Hollywood    | 1956-03-07    |  68 | Walter White  | Breaking Bad    | Drama  | tv     | 2008-01-20
+       1 |        3 | Winona Ryder       | New York     | 1971-10-29    |  52 | Joyce Byers   | Stranger Things | Sci-Fi | tv     | 2016-07-15
+       2 |        4 | Aaron Paul         | Boise        | 1979-08-27    |  44 | Jesse Pinkman | Breaking Bad    | Drama  | tv     | 2008-01-20
+       1 |        5 | David Harbour      | White Plains | 1975-04-10    |  49 | Jim Hopper    | Stranger Things | Sci-Fi | tv     | 2016-07-15
+(5 rows)
+
+
+ 4.3 Export all data to group actors from a specific city, showing also the average age (per city).
+     city     | number_of_actors |     average_age     
+--------------+------------------+---------------------
+ Hollywood    |                1 | 68.0000000000000000
+ Los Angeles  |                1 | 20.0000000000000000
+ New York     |                1 | 52.0000000000000000
+ Boise        |                1 | 44.0000000000000000
+ White Plains |                1 | 49.0000000000000000
+(5 rows)
+
+
+ 4.4 Export all data to show the favourite comedy movies for a specific user.
+ show_id | username | score |        title         | genre  | medium | release_date 
+---------+----------+-------+----------------------+--------+--------+--------------
+       3 | john_doe |     5 | The Office           | Comedy | tv     | 2005-03-24
+       4 | john_doe |     4 | Parks and Recreation | Comedy | tv     | 2009-04-09
+(2 rows)
+
+
+ 4.5 Export all data to count how many subscriptions are in the database per country.
+ country | subscription_count 
+---------+--------------------
+ USA     |                  5
+(1 row)
+
+
+ 4.6 Export all data to find the movies that start with the keyword The .
+ show_id |     title     | genre  | medium | release_date 
+---------+---------------+--------+--------+--------------
+       3 | The Office    | Comedy | tv     | 2005-03-24
+       5 | The Godfather | Crime  | movie  | 1972-03-24
+(2 rows)
+
+
+ 4.7 Export data to find the number of subscriptions per movie category.
+ genre  | subscription_count 
+--------+--------------------
+ Comedy |                  2
+ Crime  |                  1
+ Drama  |                  1
+ Sci-Fi |                  1
+(4 rows)
+
+
+ 4.8 Export data to find the username and the city of the youngest customer in the UHD subscription category.
+ username |  city   | age | plan_name 
+----------+---------+-----+-----------
+ jane_doe | Chicago |  21 | UHD
+(1 row)
+
+
+ 4.9 Export data to find users between 22 - 30 years old (including 22 and 30 ).
+   username   |     city      | country | age |      email       | pass_word | subscription_plan_id 
+--------------+---------------+---------+-----+------------------+-----------+----------------------
+ john_doe     | New York      | USA     |  28 | john@example.com | password1 |                    1
+ bob_jones    | Boston        | USA     |  30 | bob@example.com  | password4 |                    2
+ emma_johnson | San Francisco | USA     |  25 | emma@example.com | password5 |                    1
+(3 rows)
+
+
+ 4.10 Export data to find the average age of users with low score reviews (less than 3). Group your data for users under 20, 21-40, and 41 and over.
+     average_age     | age_group 
+---------------------+-----------
+ 30.0000000000000000 | 21 - 40
+(1 row)
+
