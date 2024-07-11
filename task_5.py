@@ -68,11 +68,15 @@ def query_5(country):
         print(row)
 
 
-query_1('HD')
-query_1('UHD')
-query_2('Millie Bobby Brown')
-query_2('Bryan Cranston')
-query_3('Los Angeles')
-query_3('Hollywood')
-query_4('Comedy', 'john_doe')
-query_5('USA')
+def run_queries_with_fixed_inputs():
+    query_1('HD')
+    query_1('UHD')
+    query_2('Millie Bobby Brown')
+    query_2('Bryan Cranston')
+    query_3('Los Angeles')
+    query_3('Hollywood')
+    query_4('Comedy', 'john_doe')
+    query_5('USA')
+
+
+run_queries_with_fixed_inputs()
