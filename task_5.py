@@ -54,8 +54,22 @@ def query_4(genre, username):
         print(row)
 
 
+def query_5(country):
+    query = f'''
+        SELECT country, COUNT(show_id) AS "subscription_count"
+        FROM users
+        LEFT JOIN active_subscriptions USING (username)
+        WHERE country = '{country}'
+        GROUP BY country;
+    '''
+    rows = connection.run(query)
+    for row in rows:
+        print(row)
+
+
 query_1('HD')
 query_1('UHD')
 query_2()
 query_3('Hollywood')
 query_4('Comedy', 'john_doe')
+query_5('USA')
