@@ -41,7 +41,21 @@ def query_3(city):
         print(row)
 
 
+def query_4(genre, username):
+    query = f'''
+        SELECT *
+        FROM favourites
+        INNER JOIN shows USING (show_id)
+        WHERE genre = '{genre}'
+            AND username = '{username}';
+    '''
+    rows = connection.run(query)
+    for row in rows:
+        print(row)
+
+
 query_1('HD')
 query_1('UHD')
 query_2()
 query_3('Hollywood')
+query_4('Comedy', 'john_doe')
