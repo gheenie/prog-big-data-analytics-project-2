@@ -13,6 +13,8 @@ def query_1(plan_name):
         WHERE plan_name = '{plan_name}';
     '''
     rows = connection.run(query)
+    columns = [metadata['name'] for metadata in connection.columns]
+    print('Column names in order: ', columns)
     for row in rows:
         print(row)
 
@@ -26,6 +28,8 @@ def query_2(full_name):
         WHERE full_name = '{full_name}';
     '''
     rows = connection.run(query)
+    columns = [metadata['name'] for metadata in connection.columns]
+    print('Column names in order: ', columns)
     for row in rows:
         print(row)
 
@@ -38,6 +42,8 @@ def query_3(city):
         GROUP BY city;
     '''
     rows = connection.run(query)
+    columns = [metadata['name'] for metadata in connection.columns]
+    print('Column names in order: ', columns)
     for row in rows:
         print(row)
 
@@ -51,6 +57,8 @@ def query_4(genre, username):
             AND username = '{username}';
     '''
     rows = connection.run(query)
+    columns = [metadata['name'] for metadata in connection.columns]
+    print('Column names in order: ', columns)
     for row in rows:
         print(row)
 
@@ -64,7 +72,12 @@ def query_5(country):
         GROUP BY country;
     '''
     rows = connection.run(query)
-    for row in rows:
+    columns = [metadata['name'] for metadata in connection.columns]
+    formatted_results = [
+        {column: row[i] for (i, column) in enumerate(columns)}
+        for row in rows
+    ]
+    for row in formatted_results:
         print(row)
 
 
@@ -96,4 +109,4 @@ def run_queries_with_user_inputs():
     query_5(country)
 
 
-run_queries_with_user_inputs()
+# run_queries_with_user_inputs()
