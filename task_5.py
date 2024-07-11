@@ -17,12 +17,13 @@ def query_1(plan_name):
         print(row)
 
 
-def query_2():
-    query = '''
+def query_2(full_name):
+    query = f'''
         SELECT *
         FROM actors
         LEFT JOIN actors_shows USING (actor_id)
-        LEFT JOIN shows USING (show_id);
+        LEFT JOIN shows USING (show_id)
+        WHERE full_name = '{full_name}';
     '''
     rows = connection.run(query)
     for row in rows:
@@ -69,7 +70,9 @@ def query_5(country):
 
 query_1('HD')
 query_1('UHD')
-query_2()
+query_2('Millie Bobby Brown')
+query_2('Bryan Cranston')
+query_3('Los Angeles')
 query_3('Hollywood')
 query_4('Comedy', 'john_doe')
 query_5('USA')
