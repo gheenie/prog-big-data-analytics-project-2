@@ -8,7 +8,7 @@ CREATE DATABASE bda_proj_2;
 
 CREATE TABLE actors (
     actor_id SERIAL PRIMARY KEY,
-    first_name VARCHAR(255),
+    full_name VARCHAR(255),
     city VARCHAR(255),
     date_of_birth DATE,
     age INT
@@ -70,7 +70,7 @@ CREATE TABLE active_subscriptions (
 -- Task 3.
 
 INSERT INTO actors
-(first_name, city, date_of_birth, age)
+(full_name, city, date_of_birth, age)
 VALUES
 ('Millie Bobby Brown', 'Los Angeles', '2004-02-19', 20),
 ('Bryan Cranston', 'Hollywood', '1956-03-07', 68),

@@ -9,82 +9,13 @@ CREATE TABLE
 CREATE TABLE
 CREATE TABLE
 CREATE TABLE
- actor_id |     full_name      |     city     | date_of_birth | age 
-----------+--------------------+--------------+---------------+-----
-        1 | Millie Bobby Brown | Los Angeles  | 2004-02-19    |  20
-        2 | Bryan Cranston     | Hollywood    | 1956-03-07    |  68
-        3 | Winona Ryder       | New York     | 1971-10-29    |  52
-        4 | Aaron Paul         | Boise        | 1979-08-27    |  44
-        5 | David Harbour      | White Plains | 1975-04-10    |  49
-(5 rows)
-
 INSERT 0 5
- show_id |        title         | genre  | medium | release_date 
----------+----------------------+--------+--------+--------------
-       1 | Stranger Things      | Sci-Fi | tv     | 2016-07-15
-       2 | Breaking Bad         | Drama  | tv     | 2008-01-20
-       3 | The Office           | Comedy | tv     | 2005-03-24
-       4 | Parks and Recreation | Comedy | tv     | 2009-04-09
-       5 | The Godfather        | Crime  | movie  | 1972-03-24
-(5 rows)
-
 INSERT 0 5
- actor_id | show_id |  acting_role  
-----------+---------+---------------
-        1 |       1 | Eleven
-        2 |       2 | Walter White
-        3 |       1 | Joyce Byers
-        4 |       2 | Jesse Pinkman
-        5 |       1 | Jim Hopper
-(5 rows)
-
 INSERT 0 5
- subscription_plan_id | plan_name | price | duration_in_months 
-----------------------+-----------+-------+--------------------
-                    1 | HD        |    10 |                  1
-                    2 | UHD       |    15 |                  1
-(2 rows)
-
 INSERT 0 2
-   username   |     city      | country | age |       email       | pass_word | subscription_plan_id 
---------------+---------------+---------+-----+-------------------+-----------+----------------------
- john_doe     | New York      | USA     |  28 | john@example.com  | password1 |                    1
- alice_smith  | Los Angeles   | USA     |  34 | alice@example.com | password2 |                    1
- jane_doe     | Chicago       | USA     |  21 | jane@example.com  | password3 |                    2
- bob_jones    | Boston        | USA     |  30 | bob@example.com   | password4 |                    2
- emma_johnson | San Francisco | USA     |  25 | emma@example.com  | password5 |                    1
-(5 rows)
-
 INSERT 0 5
-  username   | show_id | score 
--------------+---------+-------
- john_doe    |       3 |     5
- john_doe    |       4 |     4
- alice_smith |       5 |     3
- jane_doe    |       1 |     5
- bob_jones   |       2 |     4
-(5 rows)
-
 INSERT 0 5
-   username   | show_id | score |     comment     
---------------+---------+-------+-----------------
- john_doe     |       1 |     5 | Amazing show!
- alice_smith  |       2 |     3 | Good show
- jane_doe     |       3 |     4 | Funny and smart
- bob_jones    |       4 |     2 | Not my taste
- emma_johnson |       5 |     5 | A classic!
-(5 rows)
-
 INSERT 0 5
- show_id |   username   
----------+--------------
-       1 | john_doe
-       2 | alice_smith
-       3 | jane_doe
-       4 | bob_jones
-       5 | emma_johnson
-(5 rows)
-
 INSERT 0 5
 
  4.1 Export all data about users in the HD subscriptions.
@@ -110,10 +41,10 @@ INSERT 0 5
  4.3 Export all data to group actors from a specific city, showing also the average age (per city).
      city     | number_of_actors |     average_age     
 --------------+------------------+---------------------
- Hollywood    |                1 | 68.0000000000000000
- Los Angeles  |                1 | 20.0000000000000000
  New York     |                1 | 52.0000000000000000
+ Hollywood    |                1 | 68.0000000000000000
  Boise        |                1 | 44.0000000000000000
+ Los Angeles  |                1 | 20.0000000000000000
  White Plains |                1 | 49.0000000000000000
 (5 rows)
 
@@ -144,10 +75,10 @@ INSERT 0 5
  4.7 Export data to find the number of subscriptions per movie category.
  genre  | subscription_count 
 --------+--------------------
- Comedy |                  2
- Crime  |                  1
  Drama  |                  1
+ Comedy |                  2
  Sci-Fi |                  1
+ Crime  |                  1
 (4 rows)
 
 
