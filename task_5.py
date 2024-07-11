@@ -80,3 +80,20 @@ def run_queries_with_fixed_inputs():
 
 
 run_queries_with_fixed_inputs()
+
+
+def run_queries_with_user_inputs():
+    plan_name = input('Enter a plan name to view users under that plan: ')
+    query_1(plan_name)
+    full_name = input("Enter an actor's full name to view all data of her and her associated shows: ")
+    query_2(full_name)
+    city = input('Enter a city to find the number of actors in that city and their average age: ')
+    query_3(city)
+    genre = input('Enter a genre first: ')
+    username = input("Then enter a username to view that user's favourite shows in that genre: ")
+    query_4(genre, username)
+    country = input('Enter a country to find the total number of subscriptions in that country: ')
+    query_5(country)
+
+
+run_queries_with_user_inputs()
