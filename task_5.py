@@ -18,7 +18,7 @@ def query_1(plan_name):
 
 
 def query_2():
-    query = f'''
+    query = '''
         SELECT *
         FROM actors
         LEFT JOIN actors_shows USING (actor_id)
@@ -29,6 +29,19 @@ def query_2():
         print(row)
 
 
+def query_3(city):
+    query = f'''
+        SELECT city, COUNT(actor_id) AS "number_of_actors", AVG(age) AS "average_age"
+        FROM actors
+        WHERE city = '{city}'
+        GROUP BY city;
+    '''
+    rows = connection.run(query)
+    for row in rows:
+        print(row)
+
+
 query_1('HD')
 query_1('UHD')
 query_2()
+query_3('Hollywood')
