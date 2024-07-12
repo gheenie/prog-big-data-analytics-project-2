@@ -2,7 +2,7 @@
 
 ![ERD diagram](erd.png)
 
-The ER model is based on PostgreSQL. The difference with MySQL is VARCHAR does not require a specific number.
+The ER model is based on PostgreSQL. The difference with MySQL is VARCHAR does not require a specific number. The diagram can be reproduced on `dbdiagram.io/d` using the code in `supporting materials/code for erd.txt`.
 
 # Task 2
 
