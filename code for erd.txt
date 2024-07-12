@@ -1,0 +1,73 @@
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+
+Table subscription_plans {
+  subscription_plan_id integer [primary key]
+  plan_name varchar
+  price integer
+  duration_in_months integer
+}
+
+Table users {
+  username varchar [primary key]
+  city varchar
+  country varchar
+  age integer
+  email varchar
+  pass_word varchar
+  subscription_plan_id integer
+}
+
+Ref: users.subscription_plan_id > subscription_plans.subscription_plan_id
+
+Table shows {
+  show_id integer [primary key]
+  title varchar
+  genre varchar
+  medium varchar [note: 'movie or tv']
+  release_date date
+}
+
+Table favourites {
+  username varchar [primary key]
+  show_id integer [primary key]
+  score integer
+}
+
+Ref: favourites.username > users.username
+Ref: favourites.show_id > shows.show_id
+
+Table actors {
+  actor_id integer [primary key]
+  full_name varchar
+  city varchar
+  date_of_birth date
+  age integer
+}
+
+Table actors_shows {
+  actor_id integer [primary key]
+  show_id integer [primary key]
+  acting_role varchar
+}
+
+Ref: actors_shows.actor_id > actors.actor_id
+Ref : actors_shows.show_id > shows.show_id
+
+Table reviews {
+  username varchar [primary key]
+  show_id integer [primary key]
+  score integer
+  comment text
+}
+
+Ref: reviews.username > users.username
+Ref: reviews.show_id > shows.show_id
+
+Table active_subscriptions {
+  show_id integer [primary key]
+  username varchar [primary key]
+}
+
+Ref: active_subscriptions.show_id > shows.show_id
+Ref: active_subscriptions.username > users.username
