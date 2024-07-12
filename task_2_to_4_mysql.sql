@@ -70,73 +70,73 @@ CREATE TABLE active_subscriptions (
 -- Task 3.
 
 INSERT INTO actors
-(full_name, city, date_of_birth, age)
+    (full_name, city, date_of_birth, age)
 VALUES
-('Millie Bobby Brown', 'Los Angeles', '2004-02-19', 20),
-('Bryan Cranston', 'Hollywood', '1956-03-07', 68),
-('Winona Ryder', 'New York', '1971-10-29', 52),
-('Aaron Paul', 'Boise', '1979-08-27', 44),
-('David Harbour', 'White Plains', '1975-04-10', 49);
+    ('Millie Bobby Brown', 'Los Angeles', '2004-02-19', 20),
+    ('Bryan Cranston', 'Hollywood', '1956-03-07', 68),
+    ('Winona Ryder', 'New York', '1971-10-29', 52),
+    ('Aaron Paul', 'Boise', '1979-08-27', 44),
+    ('David Harbour', 'White Plains', '1975-04-10', 49);
 
 INSERT INTO shows
-(title, genre, medium, release_date)
+    (title, genre, medium, release_date)
 VALUES
-('Stranger Things', 'Sci-Fi', 'tv','2016-07-15'),
-('Breaking Bad', 'Drama', 'tv','2008-01-20'),
-('The Office', 'Comedy', 'tv','2005-03-24'),
-('Parks and Recreation','Comedy', 'tv', '2009-04-09'),
-('The Godfather', 'Crime', 'movie','1972-03-24');
+    ('Stranger Things', 'Sci-Fi', 'tv','2016-07-15'),
+    ('Breaking Bad', 'Drama', 'tv','2008-01-20'),
+    ('The Office', 'Comedy', 'tv','2005-03-24'),
+    ('Parks and Recreation','Comedy', 'tv', '2009-04-09'),
+    ('The Godfather', 'Crime', 'movie','1972-03-24');
 
 INSERT INTO actors_shows
-(actor_id, show_id, acting_role)
+    (actor_id, show_id, acting_role)
 VALUES
-(1, 1, 'Eleven'),
-(2, 2, 'Walter White'),
-(3, 1, 'Joyce Byers'),
-(4, 2, 'Jesse Pinkman'),
-(5, 1, 'Jim Hopper');
+    (1, 1, 'Eleven'),
+    (2, 2, 'Walter White'),
+    (3, 1, 'Joyce Byers'),
+    (4, 2, 'Jesse Pinkman'),
+    (5, 1, 'Jim Hopper');
 
 INSERT INTO subscription_plans
-(plan_name, price, duration_in_months)
+    (plan_name, price, duration_in_months)
 VALUES
-('HD', 9.99, 1),
-('UHD', 14.99, 1);
+    ('HD', 9.99, 1),
+    ('UHD', 14.99, 1);
 
 INSERT INTO users
-(username, email, pass_word, subscription_plan_id, city, country, age)
+    (username, email, pass_word, subscription_plan_id, city, country, age)
 VALUES
-('john_doe', 'john@example.com', 'password1', 1, 'New York', 'USA', 28),
-('alice_smith', 'alice@example.com', 'password2', 1, 'Los Angeles', 'USA', 34),
-('jane_doe', 'jane@example.com', 'password3', 2, 'Chicago', 'USA', 21),
-('bob_jones', 'bob@example.com', 'password4', 2, 'Boston', 'USA', 30),
-('emma_johnson', 'emma@example.com', 'password5', 1, 'San Francisco', 'USA', 25);
+    ('john_doe', 'john@example.com', 'password1', 1, 'New York', 'USA', 28),
+    ('alice_smith', 'alice@example.com', 'password2', 1, 'Los Angeles', 'USA', 34),
+    ('jane_doe', 'jane@example.com', 'password3', 2, 'Chicago', 'USA', 21),
+    ('bob_jones', 'bob@example.com', 'password4', 2, 'Boston', 'USA', 30),
+    ('emma_johnson', 'emma@example.com', 'password5', 1, 'San Francisco', 'USA', 25);
 
 INSERT INTO favourites
-(username, show_id, score)
+    (username, show_id, score)
 VALUES
-('john_doe', 3, 5),
-('john_doe', 4, 4),
-('alice_smith', 5, 3),
-('jane_doe', 1, 5),
-('bob_jones', 2, 4);
+    ('john_doe', 3, 5),
+    ('john_doe', 4, 4),
+    ('alice_smith', 5, 3),
+    ('jane_doe', 1, 5),
+    ('bob_jones', 2, 4);
 
 INSERT INTO reviews
-(username, show_id, score, comment)
+    (username, show_id, score, comment)
 VALUES
-('john_doe', 1, 5, 'Amazing show!'),
-('alice_smith', 2, 3, 'Good show'),
-('jane_doe', 3, 4, 'Funny and smart'),
-('bob_jones', 4, 2, 'Not my taste'),
-('emma_johnson', 5, 5, 'A classic!');
+    ('john_doe', 1, 5, 'Amazing show!'),
+    ('alice_smith', 2, 3, 'Good show'),
+    ('jane_doe', 3, 4, 'Funny and smart'),
+    ('bob_jones', 4, 2, 'Not my taste'),
+    ('emma_johnson', 5, 5, 'A classic!');
 
 INSERT INTO active_subscriptions
-(show_id, username)
+    (show_id, username)
 VALUES
-(1, 'john_doe'),
-(2, 'alice_smith'),
-(3, 'jane_doe'),
-(4, 'bob_jones'),
-(5, 'emma_johnson');
+    (1, 'john_doe'),
+    (2, 'alice_smith'),
+    (3, 'jane_doe'),
+    (4, 'bob_jones'),
+    (5, 'emma_johnson');
 
 -- Task 4.
 
