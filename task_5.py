@@ -1,8 +1,8 @@
 import pg8000.native
 
-from config._env_development import (user, password)
+from config._env_development import (user, password, database, host)
 
-connection = pg8000.native.Connection(user=user, password=password, database='bda_proj_2', host='localhost')
+connection = pg8000.native.Connection(user=user, password=password, database=database, host=host)
 
 
 def query_1(plan_name):
