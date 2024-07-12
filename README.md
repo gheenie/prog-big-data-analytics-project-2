@@ -23,10 +23,12 @@ pip install requirements.txt
 ```
 config/_env_development.py
 ```
-8. This file should contain the following, with the user and password of your PostgreSQL user inserted
+8. This file should contain the following, with the user and password of your PostgreSQL user inserted. Modify the host if running the script in a cloud platform instead of locally
 ```
 user=''
 password=''
+database='bda_proj_2'
+host='localhost'
 ```
 9. Run task 5 with the code below
 ```
