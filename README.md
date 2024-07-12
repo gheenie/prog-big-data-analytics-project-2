@@ -14,13 +14,28 @@ export PYTHONPATH=$(pwd)
 ```
 pip install requirements.txt
 ```
-5. Test the entire project by running index.py from the project root
+5. Ensure you have PostgreSQL installed and started.
+6. Test task 2 to 4 SQL scripts by running the block below. Text files with results will be generated.
 ```
-python src/index.py
+./run_all.sh
 ```
-6. When finished, deactivate your virtual environment
+7. Create a folder and file so you have the following
+```
+config/_env_development.py
+```
+8. This file should contain the following, with the user and password of your PostgreSQL user inserted
+```
+user=''
+password=''
+```
+9. Run task 5 with the code below
+```
+python task_5.py
+```
+10. Run task_6.py in whichever environment you have Docker and Cassandra installed and set up.
+11. When finished, deactivate your virtual environment
 ```
 deactivate
 ```
 
-Whenever you want to revisit the project after the first time, skip steps 2 and 4.
+Whenever you want to revisit the project after the first time, skip steps 2, 4, 7, and 8.
