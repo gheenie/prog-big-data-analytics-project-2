@@ -248,7 +248,7 @@ GROUP BY age;
 
 ```
 
-The SQL script is based on PostgreSQL. It should work nicely in MySQL as well. The 'echo' statements are just for formatting in the generated text files. More inserted rows would better test the script, but due to time constraints only the data given in the spec was inserted in Task 3. Having your own INSERTs will show nicer results.
+The SQL script is based on PostgreSQL. It should work nicely in MySQL as well. The 'echo' statements are just for formatting in the generated text files. I use joins whenever I want a certain column displayed for all rows, but when that is not required I use CTEs to avoid using joins. I use outer joins whenever I want to show rows even with no associated joins or a 0 count. More inserted rows would better test the script, but due to time constraints only the data given in the spec was inserted in Task 3. Having your own INSERTs will show nicer results.
 
 # Task 5
 
@@ -418,7 +418,7 @@ CREATE INDEX ON bda_proj_2.users (city);
 
 ```
 
-The above script is for Task 6.1. It should be run on cqlsh. INSERT INTO statements are required for each row in Cassandra unless a different method is used. Indices are created for 'country' and 'city' to facilitate the queries in Tasks 6.2 - 6.5.
+The above script is for Task 6.1. It should be run on cqlsh. INSERT INTO statements are required for each row in Cassandra unless a different method is used. Indices are created for 'country' and 'city' to facilitate the queries in Tasks 6.3 and 6.5 by allowing me not to use ALLOW FILTERING.
 
 ```
 # Import the driver
@@ -509,4 +509,4 @@ for i in rows:
 
 ```
 
-The above script is for Tasks 6.2 - 6.5. For Task 6.5, GROUP BY can only be used with primary keys in Cassandra, so a separate query is run for each city instead. The very last query of Task 6.5 is used to demonstrate a way of querying with user input.
+The above script is for Tasks 6.2 - 6.5. For Task 6.4, indexing doesn't work when the query involves a range, so I used ALLOW FILTERING. BETWEEN cannot be used in the WHERE clause as well, so I used AND. For Task 6.5, GROUP BY can only be used with primary keys in Cassandra, so a separate query is run for each city instead. The very last query of Task 6.5 is used to demonstrate a way of querying with user input.
